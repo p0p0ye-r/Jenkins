@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" data-provider-thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
+  <test name="Surefire test">
+    <classes>
+      <class name="com.TestLauncher.TestFailures"/>
+      <class name="com.TestLauncher.TestRunner"/>
+    </classes>
+  </test> <!-- Surefire test -->
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="com.TestLauncher.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.TestLauncher.TestRunner -->
+      <class name="com.TestLauncher.TestFailures">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.TestLauncher.TestFailures -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

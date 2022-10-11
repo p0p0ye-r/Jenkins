@@ -1,0 +1,63 @@
+{
+    "OTPGeneration": {
+        "RequestBody": {
+            "OTPGenerationRequestBody": {
+                "requestId": "XgDNMsyHXFH3YGXMOzYe1",
+                "email": "vikash.thakur1@rblbank.com",
+                "mobileno": "9152609976",
+                "channelId": "EBAUTHTXN",   " EBAUTHTXN for neft rtgs and imps"
+                "deliveryFlag": "B",
+                "serviceType": "S",
+                "IsNRI": "N",
+                "optionalField1": "IMPS","RTGS","NEFT","abcd"
+                "optionalField2": "1386.98","--Amount"
+                "optionalField3": "15364779", " pass "
+                "optionalField4": "",
+                "optionalField5": "",
+                "TransactionRefID": ""random
+            }
+        },
+        "RequestHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220432"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId": "",
+                "LanguageId": "",
+                "SVersion": ""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "66735693641281146",
+                "ServiceRequestId": "GENOTP",
+                "ServiceRequestVersion": "1"
+            }
+        }
+    }
+}

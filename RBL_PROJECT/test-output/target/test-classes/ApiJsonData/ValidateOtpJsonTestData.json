@@ -1,0 +1,54 @@
+{
+    "OTPValidation": {
+        "RequestBody": {
+            "OTPValidationRequestBody": {
+                "requestId":"18Mvk1cmjvcgokilf2fca",
+                "otp":"146247",
+                "channelId":"EBAUTH"
+
+            }
+        },
+        "RequestHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220913"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId": "",
+                "LanguageId": "",
+                "SVersion": ""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "1645168729033",
+                "ServiceRequestId": "VALOTP",
+                "ServiceRequestVersion": "1"
+            }
+        }
+    }
+}

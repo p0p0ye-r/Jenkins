@@ -1,0 +1,63 @@
+{
+    "OTPGeneration": {
+        "RequestBody": {
+            "OTPGenerationRequestBody": {
+                "requestId": "22Mvk1cmrvcgo9ij8yuhy",
+                "email": "vikash.thakur1@rblbank.com",
+                "mobileno": "8249713360",
+                "channelId": "EBAUTHTXN",
+                "deliveryFlag": "S",
+                "serviceType": "S",
+                "IsNRI":"N",
+                "optionalField1": "RTGS",
+                "optionalField2": "1234.0",
+                "optionalField3": "134567788",
+                "optionalField4": "",
+                "optionalField5": "",
+                "TransactionRefID": "234sdfgfd122g23e"
+            }
+        },
+        "RequestHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220913"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId":"",
+                "LanguageId":"",
+                "SVersion":""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "1211235673885534",
+                "ServiceRequestId": "GENOTP",
+                "ServiceRequestVersion": "1.0"
+            }
+        }
+    }
+}

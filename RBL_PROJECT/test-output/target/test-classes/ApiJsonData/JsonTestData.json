@@ -1,0 +1,64 @@
+{
+  "OTPGeneration": {
+    "RequestHeader": {
+      "Security": {
+        "Token": {
+          "MessageHashKey": "",
+          "MessageIndex": "",
+          "PasswordToken": {
+            "Password": "",
+            "UserId": "7873033125"
+          },
+          "Certificate": ""
+        }
+      },
+      "AdditionalInfo": {
+        "SessionId": "",
+        "JourneyId": "",
+        "LanguageId": "",
+        "SVersion": ""
+      },
+      "DeviceInfo": {
+        "DeviceName": "",
+        "DeviceVersion": "",
+        "DeviceID": "",
+        "DeviceOS": "",
+        "AppVersion": "",
+        "DeviceFormat": "",
+        "DeviceFamily": "",
+        "DeviceType": "",
+        "DeviceIp": "",
+        "DeviceIMEI": ""
+      },
+      "RequestMessageInfo": {
+        "MessageDateTime": "2021-09-13T06:42:14.349",
+        "BankId": "01",
+        "TimeZone": "GMT+05:00"
+      },
+      "MessageKey": {
+        "ChannelId": "BWY",
+        "RequestUUID": "1604406854349",
+        "ServiceRequestId": "GENOTP",
+        "ServiceRequestVersion": "10.2"
+      }
+    },
+    "RequestBody": {
+      "OTPGenerationRequestBody": {
+        "requestId": "V321234",
+        "email": "john.doe@rblbank.com",
+        "mobileno": "8888888888",
+        "channelId": "EBAUTH",
+        "deliveryFlag": "E",
+        "serviceType": "N",
+        "IsNRI": "N",
+        "TransactionRefID": "234sdfgfd35y",
+        "customerName": "John",
+        "optionalField1": "John",
+        "optionalField2": "14",
+        "optionalField3": "99421",
+        "optionalField4": "",
+        "optionalField5": ""
+      }
+    }
+  }
+}

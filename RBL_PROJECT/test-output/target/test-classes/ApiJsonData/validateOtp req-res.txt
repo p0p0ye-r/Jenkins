@@ -1,0 +1,415 @@
+Request/Response for validateOtp
+
+Sentinel Url: https://uatsentinel.ratnakarbank.in/otp/api/v1/ValidateOtp
+
+Sample Headers:::
+x-api-key:dVi1CAyGnRinGXdpI3jLySHfl1jk3lGn
+x-rbl-auth:Bearer eyJraWQiOiJSbDQ1V1ZMR3puRWFTZnlIOU1wdmc3RFoyanFKUENrbjVIcEFVWk5uOW44PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI0ZWZ1djk2dml0OXI0dDR0czZibDFoZ3JsZyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiQklMTFBBWVwvZ2V0UGluQ29kZUxpc3REZXRhaWwgQklMTFBBWVwvZ2V0U3RhdGVMaXN0RGV0YWlscyBCSUxMUEFZXC9tYWtlQmlsbFBheW1lbnQgQklMTFBBWVwvYmlsbGVyRGV0YWlsc1BpbmNvZGUgSU5URVJBQ1REWFwvaW50ZXJhY3REWEFQSSBPVFBcL2dlbmVyYXRlT1RQIE9UUFwvdmFsaWRhdGVPVFAgQklMTFBBWVwvZ2V0Q2l0eUxpc3REZXRhaWxzIiwiYXV0aF90aW1lIjoxNjU1OTYxMzkzLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX29SdGZEdFoxUCIsImV4cCI6MTY1NTk5MDE5MywiaWF0IjoxNjU1OTYxMzkzLCJ2ZXJzaW9uIjoyLCJqdGkiOiIwYzBmZGIwMS00OGVjLTQxOWItYjc2ZS0zYTYyZGZhNDdmOTUiLCJjbGllbnRfaWQiOiI0ZWZ1djk2dml0OXI0dDR0czZibDFoZ3JsZyJ9.jmBywrkYB4x1_WbPC63rWiWx8o-fb-uVN17Q7iMrGi_crxP-mhX_ZB76GL28eK0QBpiPsh24wSWh_34B9-Q6dT9F-Zh3KIdcBuTt9TKY40M1niKGVB4lFTUdlPjzSm9qweD6rz-Hhf4R95-gvoP4q-YGQ4KXH2PmQrgQmRVgvyYA5464to4g_aBld66lSilrrlQ4lljoM-5uGhB-dZ0c7fUbqBXdnGCAksSLTOSTq_fFO88euzoqN3QEPeYB2bnRh8cmHKOFqIoYMakol6du74xlLCAvF24ODiniIFZdclf5bRqBxIcnd2sD7Fbm-Hd502HD3scgc8vcA85wuMFpbQ
+
+Request=========================
+
+{
+    "OTPValidation": {
+        "RequestBody": {
+            "OTPValidationRequestBody": {
+                "requestId":"18Mvk1cmjvcgokilf2fca",
+                "otp":"167456",
+                "channelId":"EBAUTH"
+
+            }
+        },
+        "RequestHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220913"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId": "",
+                "LanguageId": "",
+                "SVersion": ""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "1645168729033",
+                "ServiceRequestId": "VALOTP",
+                "ServiceRequestVersion": "1"
+            }
+        }
+    }
+}
+
+
+Response=============================
+
+{
+    "OTPValidationResponse": {
+        "ResponseHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220913"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId": "",
+                "LanguageId": "",
+                "SVersion": ""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "1645168729033",
+                "ServiceRequestId": "VALOTP",
+                "ServiceRequestVersion": "1"
+            }
+        },
+        "ResponseBody": {
+            "OTPValidationResponseBody": {
+                "status": "VALID"
+            }
+        },
+        "Status": {
+            "DisplayText": "OTP Validated Successfully",
+            "ErrorCode": "000",
+            "ErrorMessage": "VALID",
+            "StatusCode": "0"
+        }
+    }
+}
+
+Schema
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "OTPValidationResponse": {
+      "type": "object",
+      "properties": {
+        "ResponseHeader": {
+          "type": "object",
+          "properties": {
+            "Security": {
+              "type": "object",
+              "properties": {
+                "Token": {
+                  "type": "object",
+                  "properties": {
+                    "MessageHashKey": {
+                      "type": "string"
+                    },
+                    "MessageIndex": {
+                      "type": "string"
+                    },
+                    "PasswordToken": {
+                      "type": "object",
+                      "properties": {
+                        "Password": {
+                          "type": "string"
+                        },
+                        "UserId": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Password",
+                        "UserId"
+                      ]
+                    },
+                    "Certificate": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "MessageHashKey",
+                    "MessageIndex",
+                    "PasswordToken",
+                    "Certificate"
+                  ]
+                }
+              },
+              "required": [
+                "Token"
+              ]
+            },
+            "AdditionalInfo": {
+              "type": "object",
+              "properties": {
+                "SessionId": {
+                  "type": "string"
+                },
+                "JourneyId": {
+                  "type": "string"
+                },
+                "LanguageId": {
+                  "type": "string"
+                },
+                "SVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "SessionId",
+                "JourneyId",
+                "LanguageId",
+                "SVersion"
+              ]
+            },
+            "DeviceInfo": {
+              "type": "object",
+              "properties": {
+                "DeviceName": {
+                  "type": "string"
+                },
+                "DeviceVersion": {
+                  "type": "string"
+                },
+                "DeviceID": {
+                  "type": "string"
+                },
+                "DeviceOS": {
+                  "type": "string"
+                },
+                "AppVersion": {
+                  "type": "string"
+                },
+                "DeviceFormat": {
+                  "type": "string"
+                },
+                "DeviceFamily": {
+                  "type": "string"
+                },
+                "DeviceType": {
+                  "type": "string"
+                },
+                "DeviceIp": {
+                  "type": "string"
+                },
+                "DeviceIMEI": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "DeviceName",
+                "DeviceVersion",
+                "DeviceID",
+                "DeviceOS",
+                "AppVersion",
+                "DeviceFormat",
+                "DeviceFamily",
+                "DeviceType",
+                "DeviceIp",
+                "DeviceIMEI"
+              ]
+            },
+            "RequestMessageInfo": {
+              "type": "object",
+              "properties": {
+                "MessageDateTime": {
+                  "type": "string"
+                },
+                "BankId": {
+                  "type": "string"
+                },
+                "TimeZone": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "MessageDateTime",
+                "BankId",
+                "TimeZone"
+              ]
+            },
+            "MessageKey": {
+              "type": "object",
+              "properties": {
+                "ChannelId": {
+                  "type": "string"
+                },
+                "RequestUUID": {
+                  "type": "string"
+                },
+                "ServiceRequestId": {
+                  "type": "string"
+                },
+                "ServiceRequestVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ChannelId",
+                "RequestUUID",
+                "ServiceRequestId",
+                "ServiceRequestVersion"
+              ]
+            }
+          },
+          "required": [
+            "Security",
+            "AdditionalInfo",
+            "DeviceInfo",
+            "RequestMessageInfo",
+            "MessageKey"
+          ]
+        },
+        "ResponseBody": {
+          "type": "object",
+          "properties": {
+            "OTPValidationResponseBody": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status"
+              ]
+            }
+          },
+          "required": [
+            "OTPValidationResponseBody"
+          ]
+        },
+        "Status": {
+          "type": "object",
+          "properties": {
+            "DisplayText": {
+              "type": "string"
+            },
+            "ErrorCode": {
+              "type": "string"
+            },
+            "ErrorMessage": {
+              "type": "string"
+            },
+            "StatusCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "DisplayText",
+            "ErrorCode",
+            "ErrorMessage",
+            "StatusCode"
+          ]
+        }
+      },
+      "required": [
+        "ResponseHeader",
+        "ResponseBody",
+        "Status"
+      ]
+    }
+  },
+  "required": [
+    "OTPValidationResponse"
+  ]
+}
+
+XPATH
+
+{
+    "OTPValidationResponse": {
+        "ResponseHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "OTPValidationResponse.ResponseHeader.Security.Token.MessageHashKey",
+                    "MessageIndex": "OTPValidationResponse.ResponseHeader.Security.Token.MessageIndex",
+                    "PasswordToken": {
+                        "Password": "OTPValidationResponse.ResponseHeader.Security.Token.PasswordToken.Password",
+                        "UserId": "OTPValidationResponse.ResponseHeader.Security.Token.PasswordToken.UserId"
+                    },
+                    "Certificate": "OTPValidationResponse.ResponseHeader.Security.Token.Certificate"
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "OTPValidationResponse.ResponseHeader.AdditionalInfo.SessionId",
+                "JourneyId": "OTPValidationResponse.ResponseHeader.AdditionalInfo.JourneyId",
+                "LanguageId": "OTPValidationResponse.ResponseHeader.AdditionalInfo.LanguageId",
+                "SVersion": "OTPValidationResponse.ResponseHeader.AdditionalInfo.SVersion"
+            },
+            "DeviceInfo": {
+                "DeviceName": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceName",
+                "DeviceVersion": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceVersion",
+                "DeviceID": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceID",
+                "DeviceOS": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceOS",
+                "AppVersion": "OTPValidationResponse.ResponseHeader.DeviceInfo.AppVersion",
+                "DeviceFormat": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceFormat",
+                "DeviceFamily": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceFamily",
+                "DeviceType": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceType",
+                "DeviceIp": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceIp",
+                "DeviceIMEI": "OTPValidationResponse.ResponseHeader.DeviceInfo.DeviceIMEI"
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "OTPValidationResponse.ResponseHeader.RequestMessageInfo.MessageDateTime",
+                "BankId": "OTPValidationResponse.ResponseHeader.RequestMessageInfo.BankId",
+                "TimeZone": "OTPValidationResponse.ResponseHeader.RequestMessageInfo.TimeZone"
+            },
+            "MessageKey": {
+                "ChannelId": "OTPValidationResponse.ResponseHeader.MessageKey.ChannelId",
+                "RequestUUID": "OTPValidationResponse.ResponseHeader.MessageKey.RequestUUID",
+                "ServiceRequestId": "OTPValidationResponse.ResponseHeader.MessageKey.ServiceRequestId",
+                "ServiceRequestVersion": "OTPValidationResponse.ResponseHeader.MessageKey.ServiceRequestVersion"
+            }
+        },
+        "ResponseBody": {
+            "OTPValidationResponseBody": {
+                "status": "OTPValidationResponse.ResponseBody.OTPValidationResponseBody.status"
+            }
+        },
+        "Status": {
+            "DisplayText": "OTPValidationResponse.Status.DisplayText",
+            "ErrorCode": "OTPValidationResponse.Status.ErrorCode",
+            "ErrorMessage": "OTPValidationResponse.Status.ErrorMessage",
+            "StatusCode": "OTPValidationResponse.Status.StatusCode"
+        }
+    }
+}

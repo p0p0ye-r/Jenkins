@@ -1,0 +1,125 @@
+Request/Response for validateOtp
+
+Sentinel Url: https://uatsentinel.ratnakarbank.in/otp/api/v1/ValidateOtp
+
+Sample Headers:::
+x-api-key:dVi1CAyGnRinGXdpI3jLySHfl1jk3lGn
+x-rbl-auth:Bearer eyJraWQiOiJSbDQ1V1ZMR3puRWFTZnlIOU1wdmc3RFoyanFKUENrbjVIcEFVWk5uOW44PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI0ZWZ1djk2dml0OXI0dDR0czZibDFoZ3JsZyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiQklMTFBBWVwvZ2V0UGluQ29kZUxpc3REZXRhaWwgQklMTFBBWVwvZ2V0U3RhdGVMaXN0RGV0YWlscyBCSUxMUEFZXC9tYWtlQmlsbFBheW1lbnQgQklMTFBBWVwvYmlsbGVyRGV0YWlsc1BpbmNvZGUgSU5URVJBQ1REWFwvaW50ZXJhY3REWEFQSSBPVFBcL2dlbmVyYXRlT1RQIE9UUFwvdmFsaWRhdGVPVFAgQklMTFBBWVwvZ2V0Q2l0eUxpc3REZXRhaWxzIiwiYXV0aF90aW1lIjoxNjU1OTYxMzkzLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX29SdGZEdFoxUCIsImV4cCI6MTY1NTk5MDE5MywiaWF0IjoxNjU1OTYxMzkzLCJ2ZXJzaW9uIjoyLCJqdGkiOiIwYzBmZGIwMS00OGVjLTQxOWItYjc2ZS0zYTYyZGZhNDdmOTUiLCJjbGllbnRfaWQiOiI0ZWZ1djk2dml0OXI0dDR0czZibDFoZ3JsZyJ9.jmBywrkYB4x1_WbPC63rWiWx8o-fb-uVN17Q7iMrGi_crxP-mhX_ZB76GL28eK0QBpiPsh24wSWh_34B9-Q6dT9F-Zh3KIdcBuTt9TKY40M1niKGVB4lFTUdlPjzSm9qweD6rz-Hhf4R95-gvoP4q-YGQ4KXH2PmQrgQmRVgvyYA5464to4g_aBld66lSilrrlQ4lljoM-5uGhB-dZ0c7fUbqBXdnGCAksSLTOSTq_fFO88euzoqN3QEPeYB2bnRh8cmHKOFqIoYMakol6du74xlLCAvF24ODiniIFZdclf5bRqBxIcnd2sD7Fbm-Hd502HD3scgc8vcA85wuMFpbQ
+
+Request=========================
+
+{
+    "OTPValidation": {
+        "RequestBody": {
+            "OTPValidationRequestBody": {
+                "requestId":"18Mvk1cmjvcgokilf2fca","use same req id as genertae otp"
+                "otp":"167456",  "convert to sha 256 and then to base 64"
+                "channelId":"EBAUTH" "same as channel id of generate otp"
+
+            }
+        },
+        "RequestHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220913"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId": "",
+                "LanguageId": "",
+                "SVersion": ""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "1645168729033",
+                "ServiceRequestId": "VALOTP",
+                "ServiceRequestVersion": "1"
+            }
+        }
+    }
+}
+
+
+Response=============================
+
+{
+    "OTPValidationResponse": {
+        "ResponseHeader": {
+            "Security": {
+                "Token": {
+                    "MessageHashKey": "",
+                    "MessageIndex": "",
+                    "PasswordToken": {
+                        "Password": "",
+                        "UserId": "101220913"
+                    },
+                    "Certificate": ""
+                }
+            },
+            "AdditionalInfo": {
+                "SessionId": "",
+                "JourneyId": "",
+                "LanguageId": "",
+                "SVersion": ""
+            },
+            "DeviceInfo": {
+                "DeviceName": "",
+                "DeviceVersion": "",
+                "DeviceID": "",
+                "DeviceOS": "",
+                "AppVersion": "",
+                "DeviceFormat": "",
+                "DeviceFamily": "",
+                "DeviceType": "",
+                "DeviceIp": "",
+                "DeviceIMEI": ""
+            },
+            "RequestMessageInfo": {
+                "MessageDateTime": "2022-02-18T12:48:49.034",
+                "BankId": "01",
+                "TimeZone": "GMT+05:00"
+            },
+            "MessageKey": {
+                "ChannelId": "BWY",
+                "RequestUUID": "1645168729033",
+                "ServiceRequestId": "VALOTP",
+                "ServiceRequestVersion": "1"
+            }
+        },
+        "ResponseBody": {
+            "OTPValidationResponseBody": {
+                "status": "VALID"
+            }
+        },
+        "Status": {
+            "DisplayText": "OTP Validated Successfully",
+            "ErrorCode": "000",
+            "ErrorMessage": "VALID",
+            "StatusCode": "0"
+        }
+    }
+}

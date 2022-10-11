@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "OTPGenerationResponse": {
+      "type": "object",
+      "properties": {
+        "ResponseHeader": {
+          "type": "object",
+          "properties": {
+            "Security": {
+              "type": "object",
+              "properties": {
+                "Token": {
+                  "type": "object",
+                  "properties": {
+                    "MessageHashKey": {
+                      "type": "string"
+                    },
+                    "MessageIndex": {
+                      "type": "string"
+                    },
+                    "PasswordToken": {
+                      "type": "object",
+                      "properties": {
+                        "Password": {
+                          "type": "string"
+                        },
+                        "UserId": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Password",
+                        "UserId"
+                      ]
+                    },
+                    "Certificate": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "MessageHashKey",
+                    "MessageIndex",
+                    "PasswordToken",
+                    "Certificate"
+                  ]
+                }
+              },
+              "required": [
+                "Token"
+              ]
+            },
+            "AdditionalInfo": {
+              "type": "object",
+              "properties": {
+                "SessionId": {
+                  "type": "string"
+                },
+                "JourneyId": {
+                  "type": "string"
+                },
+                "LanguageId": {
+                  "type": "string"
+                },
+                "SVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "SessionId",
+                "JourneyId",
+                "LanguageId",
+                "SVersion"
+              ]
+            },
+            "DeviceInfo": {
+              "type": "object",
+              "properties": {
+                "DeviceName": {
+                  "type": "string"
+                },
+                "DeviceVersion": {
+                  "type": "string"
+                },
+                "DeviceID": {
+                  "type": "string"
+                },
+                "DeviceOS": {
+                  "type": "string"
+                },
+                "AppVersion": {
+                  "type": "string"
+                },
+                "DeviceFormat": {
+                  "type": "string"
+                },
+                "DeviceFamily": {
+                  "type": "string"
+                },
+                "DeviceType": {
+                  "type": "string"
+                },
+                "DeviceIp": {
+                  "type": "string"
+                },
+                "DeviceIMEI": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "DeviceName",
+                "DeviceVersion",
+                "DeviceID",
+                "DeviceOS",
+                "AppVersion",
+                "DeviceFormat",
+                "DeviceFamily",
+                "DeviceType",
+                "DeviceIp",
+                "DeviceIMEI"
+              ]
+            },
+            "RequestMessageInfo": {
+              "type": "object",
+              "properties": {
+                "MessageDateTime": {
+                  "type": "string"
+                },
+                "BankId": {
+                  "type": "string"
+                },
+                "TimeZone": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "MessageDateTime",
+                "BankId",
+                "TimeZone"
+              ]
+            },
+            "MessageKey": {
+              "type": "object",
+              "properties": {
+                "ChannelId": {
+                  "type": "string"
+                },
+                "RequestUUID": {
+                  "type": "string"
+                },
+                "ServiceRequestId": {
+                  "type": "string"
+                },
+                "ServiceRequestVersion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ChannelId",
+                "RequestUUID",
+                "ServiceRequestId",
+                "ServiceRequestVersion"
+              ]
+            }
+          },
+          "required": [
+            "Security",
+            "AdditionalInfo",
+            "DeviceInfo",
+            "RequestMessageInfo",
+            "MessageKey"
+          ]
+        },
+        "ResponseBody": {
+          "type": "object",
+          "properties": {
+            "OTPGenerationResponseBody": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "otpKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "otpKey"
+              ]
+            }
+          },
+          "required": [
+            "OTPGenerationResponseBody"
+          ]
+        },
+        "Status": {
+          "type": "object",
+          "properties": {
+            "DisplayText": {
+              "type": "string"
+            },
+            "ErrorCode": {
+              "type": "string"
+            },
+            "ErrorMessage": {
+              "type": "string"
+            },
+            "StatusCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "DisplayText",
+            "ErrorCode",
+            "ErrorMessage",
+            "StatusCode"
+          ]
+        }
+      },
+      "required": [
+        "ResponseHeader",
+        "ResponseBody",
+        "Status"
+      ]
+    }
+  },
+  "required": [
+    "OTPGenerationResponse"
+  ]
+}

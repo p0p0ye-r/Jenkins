@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "generateTokenResponse": {
+      "type": "object",
+      "properties": {
+        "ResponseHeader": {
+          "type": "object",
+          "properties": {
+            "MessageKey": {
+              "type": "object",
+              "properties": {
+                "RequestUUID": {
+                  "type": "string"
+                },
+                "ServiceRequestId": {
+                  "type": "string"
+                },
+                "ServiceRequestVersion": {
+                  "type": "string"
+                },
+                "ChannelId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "RequestUUID",
+                "ServiceRequestId",
+                "ServiceRequestVersion",
+                "ChannelId"
+              ]
+            },
+            "ResponseMessageInfo": {
+              "type": "object",
+              "properties": {
+                "BankId": {
+                  "type": "string"
+                },
+                "TimeZone": {
+                  "type": "string"
+                },
+                "MessageDateTime": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "BankId",
+                "TimeZone",
+                "MessageDateTime"
+              ]
+            },
+            "AdditionalInfo": {
+              "type": "object",
+              "properties": {
+                "JourneyId": {
+                  "type": "string"
+                },
+                "LanguageId": {
+                  "type": "string"
+                },
+                "SVersion": {
+                  "type": "string"
+                },
+                "SessionId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "JourneyId",
+                "LanguageId",
+                "SVersion",
+                "SessionId"
+              ]
+            }
+          },
+          "required": [
+            "MessageKey",
+            "ResponseMessageInfo",
+            "AdditionalInfo"
+          ]
+        },
+        "ResponseBody": {
+          "type": "object",
+          "properties": {
+            "generateTokenResponseBody": {
+              "type": "object",
+              "properties": {
+                "access_token": {
+                  "type": "string"
+                },
+                "expires_in": {
+                  "type": "integer"
+                },
+                "token_type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "access_token",
+                "expires_in",
+                "token_type"
+              ]
+            }
+          },
+          "required": [
+            "generateTokenResponseBody"
+          ]
+        },
+        "Status": {
+          "type": "object",
+          "properties": {
+            "StatusCode": {
+              "type": "string"
+            },
+            "ErrorCode": {
+              "type": "string"
+            },
+            "ErrorMessage": {
+              "type": "string"
+            },
+            "DisplayText": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "StatusCode",
+            "ErrorCode",
+            "ErrorMessage",
+            "DisplayText"
+          ]
+        }
+      },
+      "required": [
+        "ResponseHeader",
+        "ResponseBody",
+        "Status"
+      ]
+    }
+  },
+  "required": [
+    "generateTokenResponse"
+  ]
+}

@@ -1,0 +1,376 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rbl Automation Report</title>
+    <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+    <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+    <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/24cb10e/spark/css/style.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+
+
+		
+</style></head><script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="test-view bdd-report dark">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+<div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">RBL Automation Report</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">Sep 6, 2022 02:33:44 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+                                    <li class="user-profile dropdown dropdown-animated scale-left">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-exclamation-circle"></i>
+                                        </a>
+                                        <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+                                            <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+	                                        <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
+	                                        
+	                                        
+	                                        
+	                                        <a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning pull-right"></span></a>
+	                                        <div class="dropdown-divider"></div>
+                                            <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+                                        </ul>
+                                    </li>
+                                    <li class="user-profile dropdown dropdown-animated scale-left">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-tag"></i>
+                                        </a>
+                                        <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+                                                <a class="dropdown-item" href="#">@dummy</a>
+                                                <a class="dropdown-item" href="#">@Resource_Name_Vikash</a>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+                                    <li class="test-item"  status="fail" test-id="1"
+                                            author=""
+                                            tag=""
+                                            device="">
+                                        <div class="status-avatar fail-bg">
+                                            <i class="fa fa-times text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">RBL IMPS Feature File</p> 
+                                                <p class="duration text-sm">0h 0m 7s+722ms</p> 
+                                                <span class="datetime">14:33:44 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-fail">RBL IMPS Feature File</h5>
+                                                        <span class='badge badge-success'>09.06.2022 14:33:44</span>
+                                                        <span class='badge badge-danger'>09.06.2022 14:33:52</span>
+                                                        <span class='badge badge-default'>0h 0m 7s+722ms</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<h5 class="card-title pl-3">
+				<div class="node">TC_001_IMPS_CIB</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</h5>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>IMPS_RTGS_NEFT_COMMON_Json.initializeScenario(Scenario)</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="IMPS_RTGS_NEFT_COMMON_Json.i_am_requesting(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given I am requesting "BaseURI"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="IMPS_RTGS_NEFT_COMMON_Json.load_TestData_Form_Specific_Api_sheet(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given Load TestData Form Specific Api sheet "Generate OTP"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="IMPS_RTGS_NEFT_COMMON_Json.load_TestData_Form_Specific_Api_sheet(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given Load TestData Form Specific Api sheet "Validate OTP"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="IMPS_RTGS_NEFT_COMMON_Json.base_Test_data_Replace_with_RunTime_Test_Data(String,String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given Base Test "GenrateOtpBaseTestJson.json" data Replace with RunTime Test Data"GenrateOtpJsonTestData.json"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.create_Input_File_for_json_from_Excel_Sheet()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Create Input File for json from Excel Sheet</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.i_go_to_and_Api_Request_Saved_in_Json_File_without_charset(String,String,String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then I go to "/otp/api/v1/generateOtp" and "Post" Api Request Saved in Json File "GenrateOtpJsonTestData.json"without charset</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.save_Final_Response_in_output_File(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Save Final Response in "JsonGenrateOtpResponse.json" output File.</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.fetch_OTP_In_Your_Regesterd_Mobile()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Fetch OTP In Your Registered Mobile.</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.create_Input_File_for_ValidateOTP_json_from_Excel_Sheet()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Create Input File for ValidateOTP json from Excel Sheet</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.i_am_validating_object_for_string_value_For(String,String,String)">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Then I am validating object "OTPGenerationResponse.ResponseHeader.Security.Token.PasswordToken.UserId" for string value "101220913" For "GenrateOTP".</span>
+							</div>
+				<textarea disabled class="code-block">com.jayway.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+	at com.jayway.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:928)
+	at com.jayway.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:893)
+	at com.jayway.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:972)
+	at com.jayway.restassured.path.json.JsonPath.get(JsonPath.java:201)
+	at com.stepDefination.Common.IMPS_RTGS_NEFT_COMMON_Json.i_am_validating_object_for_string_value_For(IMPS_RTGS_NEFT_COMMON_Json.java:263)
+	at ✽.I am validating object "OTPGenerationResponse.ResponseHeader.Security.Token.PasswordToken.UserId" for string value "101220913" For "GenrateOTP".(src/test/java/com/feature/IMPS/FundTransfer_IMPS_Feature.feature:17)
+Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading 'E', no possible valid JSON value or punctuation could be recognized.
+	at groovy.json.JsonLexer.nextToken(JsonLexer.java:87)
+	at groovy.json.JsonLexer$nextToken.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+	at com.jayway.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:96)
+	at com.jayway.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:157)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:169)
+	at com.jayway.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:82)
+	at com.jayway.restassured.path.json.JsonPath$4$1.method(JsonPath.java:891)
+	at com.jayway.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:926)
+	at com.jayway.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:893)
+	at com.jayway.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:972)
+	at com.jayway.restassured.path.json.JsonPath.get(JsonPath.java:201)
+	at com.stepDefination.Common.IMPS_RTGS_NEFT_COMMON_Json.i_am_validating_object_for_string_value_For(IMPS_RTGS_NEFT_COMMON_Json.java:263)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at cucumber.runtime.Utils$1.call(Utils.java:26)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:20)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:49)
+	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
+	at cucumber.runner.TestStep.run(TestStep.java:49)
+	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+	at cucumber.runner.TestCase.run(TestCase.java:44)
+	at cucumber.runner.Runner.runPickle(Runner.java:40)
+	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:68)
+	at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.i_compare_Json_Response_file_with_Schema_File(String,String)">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then I compare Json Schema file "Json_Schema.json" with Response File "JsonGenrateOtpResponse.json".</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="IMPS_RTGS_NEFT_COMMON_Json.save_the_Request_and_Response(String,String)">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Save the Request "GenrateOtpJsonTestData.json" and Response "JsonGenrateOtpResponse.json".</span>
+							</div>
+				<div class="details">Step skipped</div>
+					</div>
+				</div>
+	</div>
+</div>
+                                        </div>
+                                    </li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/24cb10e/spark/js/script.js"></script>
+<script type="text/javascript">
+
+
+
+$(document).ready(function() {
+});
+
+		
+</script></body>
+</html>
