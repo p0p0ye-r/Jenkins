@@ -24,7 +24,7 @@ import cucumber.api.java.After;
 
 public class BaseTest extends Pojo {
 	private Properties objConfig;
-	 String nodeurl ="http://192.0.6.81:45503/wd/hub";
+	 String hubURL ="http://localhost:4456/wd/hub";
 	
 
 	public Pojo initializeWebEnvironment() {
@@ -159,14 +159,14 @@ public class BaseTest extends Pojo {
 			
 			if (browser.equalsIgnoreCase("chrome")) {
 				
-				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-				desiredCapabilities.setCapability("browser","chrome");
-				System.setProperty("webdriver.chrome.driver",
-						objConfig.getProperty("webdriver.chrome.driver").trim());
+//				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+//				desiredCapabilities.setCapability("browser","chrome");
+//				System.setProperty("webdriver.chrome.driver",
+//						objConfig.getProperty("webdriver.chrome.driver").trim());
 				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.addArguments("--headless");
-				chromeOptions.addArguments("--window-size=1920,1200");
-				webDriver = new RemoteWebDriver(new URL(nodeurl),chromeOptions.merge(desiredCapabilities));
+	//		chromeOptions.addArguments("--headless");
+				
+				webDriver = new RemoteWebDriver(new URL(hubURL),chromeOptions);
 				
 				
 	
@@ -186,9 +186,9 @@ public class BaseTest extends Pojo {
 					objChromeOptions.addArguments("incognito");
 				
 				if (objConfig.getProperty("webDriver").equalsIgnoreCase("true")) {
-					String WebDriverPath = objConfig.getProperty("webdriver.chrome.driver").trim().toLowerCase();
-					System.setProperty("webdriver.chrome.driver", WebDriverPath);
-					webDriver = new RemoteWebDriver(objChromeOptions);
+//					String WebDriverPath = objConfig.getProperty("webdriver.chrome.driver").trim().toLowerCase();
+//					System.setProperty("webdriver.chrome.driver", WebDriverPath);
+					webDriver = new RemoteWebDriver(new URL(hubURL),objChromeOptions);
 
 				}
 				
