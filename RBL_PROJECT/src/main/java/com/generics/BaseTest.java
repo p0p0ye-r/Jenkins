@@ -3,6 +3,7 @@ package com.generics;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -15,12 +16,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 
 public class BaseTest extends Pojo {
 	private Properties objConfig;
+	 String nodeurl ="http://192.0.6.81:45503/wd/hub";
+	
 
 	public Pojo initializeWebEnvironment() {
 		if (this.getDriver() == null) {
@@ -150,24 +155,43 @@ public class BaseTest extends Pojo {
 		try {
 			String browser = objConfig.getProperty("web.browser").trim().toLowerCase();
 			String Headless = objConfig.getProperty("Api.browser").trim().toLowerCase();
+		
+			
 			if (browser.equalsIgnoreCase("chrome")) {
+				
+				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+				desiredCapabilities.setCapability("browser","chrome");
+				System.setProperty("webdriver.chrome.driver",
+						objConfig.getProperty("webdriver.chrome.driver").trim());
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("--headless");
+				chromeOptions.addArguments("--window-size=1920,1200");
+				webDriver = new RemoteWebDriver(new URL(nodeurl),chromeOptions.merge(desiredCapabilities));
+				
+				
+	
 				ChromeOptions objChromeOptions = new ChromeOptions();
 				if (Headless.equalsIgnoreCase("true")) {
-					System.setProperty("webdriver.chrome.driver",
-							objConfig.getProperty("webdriver.chrome.driver").trim());
-					ChromeOptions chromeOptions = new ChromeOptions();
-					chromeOptions.addArguments("--headless");
-					chromeOptions.addArguments("--window-size=1920,1200");
-					webDriver = new ChromeDriver(chromeOptions);
+//					System.setProperty("webdriver.chrome.driver",
+//							objConfig.getProperty("webdriver.chrome.driver").trim());
+//					ChromeOptions chromeOptions = new ChromeOptions();
+//					chromeOptions.addArguments("--headless");
+//					chromeOptions.addArguments("--window-size=1920,1200");
+//					webDriver = new RemoteWebDriver(chromeOptions);
+					
+					
 				}
+				
 				if (objConfig.getProperty("chromeIncognito").equalsIgnoreCase("true"))
 					objChromeOptions.addArguments("incognito");
+				
 				if (objConfig.getProperty("webDriver").equalsIgnoreCase("true")) {
 					String WebDriverPath = objConfig.getProperty("webdriver.chrome.driver").trim().toLowerCase();
 					System.setProperty("webdriver.chrome.driver", WebDriverPath);
-					webDriver = new ChromeDriver(objChromeOptions);
+					webDriver = new RemoteWebDriver(objChromeOptions);
 
 				}
+				
 				objChromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
 				Map<String, Object> prefs = new HashMap<String, Object>();
 				String downloadPath = System.getProperty("user.dir") + File.separator + "target" + File.separator

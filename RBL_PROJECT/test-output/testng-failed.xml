@@ -6,4 +6,15 @@
       <class name="com.TestLauncher.TestRunner"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="com.TestLauncher.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 3 2 1"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.TestLauncher.TestRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
